@@ -18,23 +18,32 @@
 // - The output element is going to be a Vector of strings.
 // No hints this time!
 
-// I AM NOT DONE
+
 
 pub enum Command {
     Uppercase,
     Trim,
-    Append(usize),
+    Append(usize),//usize is a numerical type whose size depends on the architecture of the operating system
 }
 
 mod my_module {
     use super::Command;
 
     // TODO: Complete the function signature!
-    pub fn transformer(input: ???) -> ??? {
+    pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> {
         // TODO: Complete the output declaration!
-        let mut output: ??? = vec![];
+        let mut output: Vec<String> = vec![];
         for (string, command) in input.iter() {
-            // TODO: Complete the function body. You can do it!
+            let s = match command {//in the test part, the question wants from us to use all of the Command features
+                //so we create a variable s which is equal to a match. With this way test can choose what it want to do
+                Command::Uppercase => string.to_uppercase(),//we did this to make all letters big
+                Command::Trim => string.trim().into(),//removes unnecessary blankets
+                Command::Append(i) => string.to_owned() + &"bar".repeat(*i),//.to_owned() Gets ownership himself
+                //and creates a new String. For "Append(i)" that "i" is in charge of indicating how many times
+                //.repeat() will repeat. I used & for the "bar" because if we want to make it keeps writing it,
+                //it has to be a reference.
+            };
+            output.push(s)
         }
         output
     }
@@ -43,7 +52,7 @@ mod my_module {
 #[cfg(test)]
 mod tests {
     // TODO: What do we need to import to have `transformer` in scope?
-    use ???;
+    use crate::my_module::transformer;
     use super::Command;
 
     #[test]

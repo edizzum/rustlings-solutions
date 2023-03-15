@@ -7,9 +7,11 @@
 //
 // Execute `rustlings hint lifetimes1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
-fn longest(x: &str, y: &str) -> &str {
+//You will work with lifetimes if you are dealing with references.
+fn longest<'a> (x: &'a str, y: &'a str) -> &'a str {//when we give parameters outside from this function,
+                                                    //we don't know which one when will die.
+                                                    //so we gave them the same lifetime to make rust compiler happy :)
     if x.len() > y.len() {
         x
     } else {

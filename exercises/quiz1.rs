@@ -10,10 +10,21 @@
 // Write a function that calculates the price of an order of apples given
 // the quantity bought. No hints this time!
 
-// I AM NOT DONE
+
 
 // Put your function here!
-// fn calculate_price_of_apples {
+fn calculate_price_of_apples(appleCount: i32) -> i32 {
+    let mut toplam = 0;
+    if appleCount > 40 {
+        toplam += appleCount * 1;
+        toplam
+    } else {
+        toplam += appleCount * 2;
+        toplam
+    }
+}
+//Solution: in the test part a variable is equal to the value returned as a result of the parameter entered into a function
+//if appleCount less then 40 they are multiplying with 2
 
 // Don't modify this function!
 #[test]

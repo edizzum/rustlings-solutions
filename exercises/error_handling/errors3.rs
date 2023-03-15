@@ -4,11 +4,15 @@
 // Why not? What should we do to fix it?
 // Execute `rustlings hint errors3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 
 use std::num::ParseIntError;
 
-fn main() {
+fn main() -> Result<(), ParseIntError> {//The program wants from us to make a return which is a type ofResult 
+                                        //because of the total_cost() function.
+                                        //the cost variable is equal to a Result type which is Ok()
+                                        //So that, we returned an Ok(())
+                                        //Using only "()", indicates that the ParseIntError type has no content.
     let mut tokens = 100;
     let pretend_user_input = "8";
 
@@ -20,6 +24,7 @@ fn main() {
         tokens -= cost;
         println!("You now have {} tokens.", tokens);
     }
+    Ok(())
 }
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {

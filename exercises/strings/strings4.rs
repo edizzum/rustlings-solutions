@@ -6,7 +6,7 @@
 // before the parentheses on each line. If you're right, it will compile!
 // No hints this time!
 
-// I AM NOT DONE
+
 
 fn string_slice(arg: &str) {
     println!("{}", arg);
@@ -16,14 +16,14 @@ fn string(arg: String) {
 }
 
 fn main() {
-    ???("blue");
-    ???("red".to_string());
-    ???(String::from("hi"));
-    ???("rust is fun!".to_owned());
-    ???("nice weather".into());
-    ???(format!("Interpolation {}", "Station"));
-    ???(&String::from("abc")[0..1]);
-    ???("  hello there ".trim());
-    ???("Happy Monday!".to_string().replace("Mon", "Tues"));
-    ???("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string_slice("blue");
+    string("red".to_string());//.to_string() is to make &str -> String
+    string(String::from("hi"));//String::from() classic.
+    string("rust is fun!".to_owned());//the important stuff is a ownership for Strings.
+    string_slice("nice weather".into());//.into() is to loop all letters nothing special.
+    string(format!("Interpolation {}", "Station"));//format! is a String usecase
+    string_slice(&String::from("abc")[0..1]);//it is String_from but it borrowed with & so -> &str
+    string_slice("  hello there ".trim());//.trim() removing blankets nothing special
+    string("Happy Monday!".to_string().replace("Mon", "Tues"));//similar like second one. you know replace from Strings3.rs
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());//.to_lowecase() this method can only use for Strings to make them lowercase. 
 }

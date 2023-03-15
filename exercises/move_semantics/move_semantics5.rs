@@ -3,13 +3,13 @@
 // adding, changing or removing any of them.
 // Execute `rustlings hint move_semantics5` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 
 fn main() {
     let mut x = 100;
     let y = &mut x;
+    *y += 100;//we changed lines because there is also an ownership with references(&mut)
     let z = &mut x;
-    *y += 100;
     *z += 1000;
     assert_eq!(x, 1200);
 }
