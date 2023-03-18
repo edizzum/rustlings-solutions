@@ -1,4 +1,4 @@
-## rustlings 🦀
+## Rustlings 🦀
 * Welcome Rustaceans!
 * This repository created for who wants to improve understanding and writing skills of Rust Language.
 * You can find here all of the exercises solutions with explanations.
